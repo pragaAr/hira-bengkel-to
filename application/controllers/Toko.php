@@ -22,9 +22,9 @@ class Toko extends CI_Controller
   {
     $data['title']  = 'Data Toko';
 
-    $this->load->view('template/header');
-    $this->load->view('template/navbar');
+    $this->load->view('template/header', $data);
     $this->load->view('template/sidebar');
+    $this->load->view('template/navbar');
     $this->load->view('main/stok/toko', $data);
   }
 

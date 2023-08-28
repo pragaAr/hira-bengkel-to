@@ -53,55 +53,6 @@
 </div>
 </div>
 
-<!-- add Stok -->
-<div class="modal fade" id="addStok" data-backdrop="static">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content p-3">
-      <div class="modal-header">
-        <h5 class="modal-title text-dark">Form Tambah Stok Part</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="form_addStok">
-          <div class="form-row">
-            <div class="form-group col-lg-6 col-md-6">
-              <label class="font-weight-bold" for="nama">Nama Sparepart</label>
-              <input type="text" class="form-control text-uppercase" name="nama" id="nama" autocomplete="off" required oninvalid="this.setCustomValidity('Nama Sparepart wajib diisi!')" oninput="setCustomValidity('')">
-            </div>
-            <div class="form-group col-lg-6 col-md-6">
-              <label class="font-weight-bold" for="merk">Merk</label>
-              <select name="merk" id="merk" class="form-control selectmerk" style="width:100%;" required oninvalid="this.setCustomValidity('Merk wajib di isi!')" oninput="setCustomValidity('')">
-                <option value=""></option>
-              </select>
-            </div>
-            <div class="form-group col-lg-6 col-md-6">
-              <label class="font-weight-bold" for="baru">Part Baru</label>
-              <input type="number" class="form-control" name="baru" id="baru" value="0" step="0.01" autocomplete="off" required oninvalid="this.setCustomValidity('Part Baru wajib diisi!')" oninput="setCustomValidity('')">
-            </div>
-            <div class="form-group col-lg-6 col-md-6">
-              <label class="font-weight-bold" for="bekas">Part Bekas</label>
-              <input type="number" class="form-control" name="bekas" id="bekas" value="0" step="0.01" autocomplete="off" required oninvalid="this.setCustomValidity('Part Bekas wajib diisi!')" oninput="setCustomValidity('')">
-            </div>
-            <div class="form-group col-lg-6 col-md-6">
-              <label class="font-weight-bold" for="satuan">Satuan</label>
-              <input type="text" class="form-control text-uppercase" name="satuan" id="satuan" autocomplete="off" required oninvalid="this.setCustomValidity('Satuan wajib diisi!')" oninput="setCustomValidity('')">
-            </div>
-            <div class="form-group col-lg-6 col-md-6">
-              <label class="font-weight-bold" for="rak">Rak</label>
-              <input type="text" class="form-control text-uppercase" name="rak" id="rak" autocomplete="off" required oninvalid="this.setCustomValidity('Rak wajib diisi!')" oninput="setCustomValidity('')">
-            </div>
-          </div>
-          <div class="text-right">
-            <button type="submit" class="btn btn-sm btn-primary">Tambah</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- vulk Ban -->
 <div class="modal fade" id="vulkBan" data-backdrop="static">
   <div class="modal-dialog modal-lg">

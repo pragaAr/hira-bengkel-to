@@ -27,7 +27,7 @@ $('#tokoTables').DataTable({
   processing: true,
   serverSide: true,
   ajax: {
-    url: 'http://localhost/hira/toko/getToko',
+    url: 'http://localhost/he/toko/getToko',
     type: 'POST',
     dataType: 'json',
   },
@@ -84,7 +84,7 @@ $('#form_addToko').on('submit', function () {
   const telp = $('#telp').val();
 
   $.ajax({
-    url: 'http://localhost/hira/toko/create',
+    url: 'http://localhost/he/toko/create',
     type: 'POST',
     data: {
       nama: nama,
@@ -114,7 +114,7 @@ $('#tokoTables').on('click', '.btn-edit-toko', function (e) {
   const id = $(this).data('id');
 
   $.ajax({
-    url: 'http://localhost/hira/toko/getId',
+    url: 'http://localhost/he/toko/getId',
     type: 'POST',
     data: {
       idtoko: id,
@@ -139,7 +139,7 @@ $('#form_editToko').on('submit', function () {
 
   $.ajax({
     type: 'POST',
-    url: 'http://localhost/hira/toko/update',
+    url: 'http://localhost/he/toko/update',
     data: {
       id: id,
       nama: nama,
@@ -176,7 +176,7 @@ $('#tokoTables').on('click', '.btn-delete-toko', function () {
   }).then((result) => {
     if (result.value) {
       $.ajax({
-        url: 'http://localhost/hira/toko/delete',
+        url: 'http://localhost/he/toko/delete',
         method: 'POST',
         data: { idtoko: id },
         success: function (data) {

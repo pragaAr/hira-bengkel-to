@@ -10,11 +10,11 @@ class Toko_model extends CI_Model
     $this->datatables->add_column(
       'view',
       '<div class="btn-group" role="group">
-          <a href="javascript:void(0);" class="btn btn-sm btn-warning text-white btn-edit-toko" data-id="$1" data-toggle="tooltip" title="Edit" style="border: 1px solid white">
-            <i class="fas fa-pencil-alt"></i>
+          <a href="javascript:void(0);" class="btn btn-sm btn-warning text-white btn-edit-toko" data-id="$1" data-toggle="tooltip" title="Edit">
+            <i class="fas fa-pencil-alt fa-sm"></i>
           </a>
-          <a href="javascript:void(0);" class="btn btn-sm btn-danger text-white btn-delete-toko" data-id="$1" data-toggle="tooltip" title="Hapus" style="border: 1px solid white">
-            <i class="fas fa-trash"></i>
+          <a href="javascript:void(0);" class="btn btn-sm btn-danger text-white btn-delete-toko" data-id="$1" data-toggle="tooltip" title="Hapus">
+            <i class="fas fa-trash fa-sm"></i>
           </a>
         </div>',
       'id_toko, nama_toko, no_telp_toko'
