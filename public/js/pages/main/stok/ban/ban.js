@@ -13,7 +13,8 @@ $.fn.dataTableExt.oApi.fnPagingInfo = function (oSettings) {
 };
 
 $('#banTables').DataTable({
-  ordering: false,
+  ordering: true,
+  pageLength: 10,
   initComplete: function () {
     var api = this.api();
     $('#banTables_filter input')
@@ -59,9 +60,9 @@ $('#banTables').DataTable({
       data: 'vulk',
       className: 'text-center',
       render: function (data, type, row) {
-        return data === 0
-          ? '<button type="button" class="btn btn-sm btn-dark" style="border: 1px solid white;" disabled>Ori</button>'
-          : '<button type="button" class="btn btn-sm btn-primary" style="border: 1px solid white;" disabled>Vulk</button>';
+        return data == 0
+          ? '<button type="button" class="btn btn-sm btn-dark" disabled>Ori</button>'
+          : '<button type="button" class="btn btn-sm btn-primary" disabled>Vulk</button>';
       },
     },
     {

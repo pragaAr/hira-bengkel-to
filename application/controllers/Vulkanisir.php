@@ -278,11 +278,9 @@ class Vulkanisir extends CI_Controller
   public function printDo()
   {
     $nota     = $this->input->post('nota');
-    $head     = $this->Vulk->getKdByNota($nota);
-    $detail   = $this->Vulk->getDataByNota($nota);
 
-    $data['head']     = $head;
-    $data['detail']   = $detail;
+    $data['head']   = $this->Vulk->getKdByNota($nota);
+    $data['detail'] = $this->Vulk->getDataByNota($nota);
 
     $content  = $this->load->view('trans/ban/vulk/print-selesai', $data, true);
 
@@ -299,11 +297,8 @@ class Vulkanisir extends CI_Controller
 
   public function suratJalanKeluar($kd)
   {
-    $dt   = $this->Vulk->getDataSuratJalan($kd);
-    $head = $this->Vulk->getVulkKd($kd);
-
-    $data['head']     = $head;
-    $data['dtvulk']   = $dt;
+    $data['head']     = $this->Vulk->getVulkKd($kd);
+    $data['dtvulk']   = $this->Vulk->getDataSuratJalan($kd);
 
     $content  = $this->load->view('trans/ban/vulk/print-sj', $data, true);
 

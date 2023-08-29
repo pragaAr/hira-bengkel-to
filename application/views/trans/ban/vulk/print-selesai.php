@@ -116,7 +116,7 @@
     <table style="margin-bottom:20px;">
       <tr>
         <td style="width:35%">
-          <?= strtoupper($head->tempat_vulk) ?>
+          <?= strtoupper($head->nama_toko) ?>
         </td>
         <td style="width:45%; font-weight:bold; letter-spacing:1px; font-size:large; font-family: 'Times New Roman', Times, serif;">
           <u>VULKANISIR SELESAI<u>

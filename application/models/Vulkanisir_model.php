@@ -49,9 +49,10 @@ class Vulkanisir_model extends CI_Model
 
   public function getVulkKd($kd)
   {
-    $this->db->select('kd_vulk, tempat_vulk, tgl_vulk')
-      ->from('vulkanisir')
-      ->where('kd_vulk', $kd);
+    $this->db->select('a.kd_vulk, a.tgl_vulk, b.nama_toko')
+      ->from('vulkanisir a')
+      ->join('toko b', 'b.id_toko = a.tempat_vulk')
+      ->where('a.kd_vulk', $kd);
 
     $query = $this->db->get()->row();
 
@@ -96,15 +97,16 @@ class Vulkanisir_model extends CI_Model
 
   public function getDetailAllVulk()
   {
-    $this->datatables->select('a.id_detail_vulk, a.kd_vulk, a.no_seri_vulk, a.merk_vulk, a.ukuran_ban_vulk, a.jml_vulk, a.status, a.no_nota, a.tgl_update, b.tempat_vulk, b.tgl_vulk')
+    $this->datatables->select('a.id_detail_vulk, a.kd_vulk, a.no_seri_vulk, a.merk_vulk, a.ukuran_ban_vulk, a.jml_vulk, a.status, a.no_nota, a.tgl_update, b.tgl_vulk, c.nama_toko')
       ->from('detail_vulk a')
       ->join('vulkanisir b', 'b.kd_vulk = a.kd_vulk')
+      ->join('toko c', 'c.id_toko = b.tempat_vulk')
       ->add_column(
         'view',
         '<div class="btn-group" role="group">
           
         </div>',
-        'id_detail_vulk, kd_vulk, no_seri_vulk, merk_vulk, ukuran_ban_vulk, jml_vulk, status, no_nota, tgl_update, tempat_vulk, tgl_vulk'
+        'id_detail_vulk, kd_vulk, no_seri_vulk, merk_vulk, ukuran_ban_vulk, jml_vulk, status, no_nota, tgl_update, nama_toko, tgl_vulk'
       );
 
     return $this->datatables->generate();
@@ -157,8 +159,9 @@ class Vulkanisir_model extends CI_Model
 
   public function getKdByNota($nota)
   {
-    $this->db->select('*')
-      ->from('vulk_done')
+    $this->db->select('a.kd_vulk, a.pembayaran, a.tgl_selesai, a.biaya, b.nama_toko')
+      ->from('vulk_done a')
+      ->join('toko b', 'b.id_toko = a.tempat_vulk')
       ->where('no_nota', $nota);
 
     $query = $this->db->get()->row();

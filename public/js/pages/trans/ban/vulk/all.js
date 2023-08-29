@@ -15,7 +15,7 @@ $.fn.dataTableExt.oApi.fnPagingInfo = function (oSettings) {
 $('#detailAllTables').DataTable({
   ordering: true,
   order: [[0, 'desc']],
-  pageLength: 20,
+  pageLength: 10,
   initComplete: function () {
     var api = this.api();
     $('#detailAllTables_filter input')
@@ -39,7 +39,7 @@ $('#detailAllTables').DataTable({
       className: 'text-center',
     },
     {
-      data: 'tempat_vulk',
+      data: 'nama_toko',
       render: function (data, type, row) {
         return data.toUpperCase();
       },

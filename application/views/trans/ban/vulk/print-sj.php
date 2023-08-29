@@ -116,7 +116,7 @@
     <table style="margin-bottom:20px;">
       <tr>
         <td style="width:35%">
-          <?= strtoupper($head->tempat_vulk) ?>
+          <?= strtoupper($head->nama_toko) ?>
         </td>
         <td style="width:45%; font-weight:bold; letter-spacing:1px; font-size:large;">
           <u>SURAT JALAN VULKANISIR<u>
@@ -186,7 +186,7 @@
         <tbody>
           <tr>
             <td class="text-center" style="padding-top:60px">Bag. Pembelian</td>
-            <td class="text-center" style="padding-top:60px"><?= strtoupper($head->tempat_vulk) ?></td>
+            <td class="text-center" style="padding-top:60px"><?= strtoupper($head->nama_toko) ?></td>
             <td class="text-center" style="padding-top:60px">Bag. Keamanan</td>
           </tr>
         </tbody>
