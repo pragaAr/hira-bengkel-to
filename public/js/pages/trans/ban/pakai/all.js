@@ -16,7 +16,7 @@ $('#allPakaiBanTables').DataTable({
   ordering: true,
   order: [[0, 'desc']],
   language: {
-    searchPlaceholder: 'Search Kd Pakai/Truck',
+    searchPlaceholder: 'Search Kd/Truck/Seri',
   },
   pageLength: 10,
   initComplete: function () {
@@ -60,9 +60,11 @@ $('#allPakaiBanTables').DataTable({
     },
     {
       data: 'no_seri',
-      searchable: false,
+      searchable: true,
       render: function (data, type, row) {
         if (data == null && row.nama_merk == null) {
+          return '-';
+        } else if (data == null) {
           return '-';
         } else if (row.nama_merk == null) {
           return data.toUpperCase() + ', -';
@@ -76,7 +78,7 @@ $('#allPakaiBanTables').DataTable({
       searchable: false,
       className: 'text-center',
       render: function (data, type, row) {
-        return data.toUpperCase() + ' ' + row.status_ban_pakai;
+        return data.toUpperCase() + ' pcs';
       },
     },
     {
@@ -108,6 +110,21 @@ $('#allPakaiBanTables').DataTable({
           month: '2-digit',
           year: 'numeric',
         });
+      },
+    },
+    {
+      data: 'view',
+      className: 'text-center',
+      render: function (data, type, row) {
+        if (row.jml_pakai_ban == '0') {
+          return '<button type="button" class="btn btn-sm btn-secondary" disabled><i class="fas fa-ban fa-sm"></i></button>';
+        } else {
+          return (
+            '<a href="http://localhost/he/pakai_ban/kembaliGudang/' +
+            row.id_detail_pakai_ban +
+            '" class="btn btn-danger btn-sm kembali-gudang" data-toggle="tooltip" title="Kembalikan ke Gudang"><i class="fas fa-angle-double-right fa-sm"></i></a>'
+          );
+        }
       },
     },
   ],

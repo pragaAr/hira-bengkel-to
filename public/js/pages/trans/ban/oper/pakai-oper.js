@@ -61,7 +61,7 @@ $('#allPakaiBanTables').DataTable({
     },
     {
       data: 'no_seri',
-      searchable: false,
+      searchable: true,
       render: function (data, type, row) {
         if (data == null && row.nama_merk == null) {
           return '-';
