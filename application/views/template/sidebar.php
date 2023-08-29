@@ -67,14 +67,15 @@
     </div>
   </li>
 
-  <li class="nav-item <?= $this->uri->segment(1) == 'beli_ban' || $this->uri->segment(1) == 'pakai_ban' || $this->uri->segment(1) == 'oper_ban' || $this->uri->segment(1) == 'retur_ban' || $this->uri->segment(1) == 'vulkanisir' ? 'active' : '' ?>">
+  <li class="nav-item <?= $this->uri->segment(1) == 'beli_ban' || $this->uri->segment(1) == 'movement' || $this->uri->segment(1) == 'pakai_ban' || $this->uri->segment(1) == 'oper_ban' || $this->uri->segment(1) == 'retur_ban' || $this->uri->segment(1) == 'vulkanisir' ? 'active' : '' ?>">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBan" aria-expanded="true" aria-controls="collapseBan">
       <i class="far fa-dot-circle"></i>
       <span>Ban</span>
     </a>
-    <div id="collapseBan" class="collapse <?= $this->uri->segment(1) == 'beli_ban' || $this->uri->segment(1) == 'pakai_ban' || $this->uri->segment(1) == 'oper_ban' || $this->uri->segment(1) == 'retur_ban' || $this->uri->segment(1) == 'vulkanisir' ? 'show' : '' ?>" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+    <div id="collapseBan" class="collapse <?= $this->uri->segment(1) == 'beli_ban' || $this->uri->segment(1) == 'movement' || $this->uri->segment(1) == 'pakai_ban' || $this->uri->segment(1) == 'oper_ban' || $this->uri->segment(1) == 'retur_ban' || $this->uri->segment(1) == 'vulkanisir' ? 'show' : '' ?>" aria-labelledby="headingPages" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         <a class="collapse-item <?= $this->uri->segment(1) == 'beli_ban' || $this->uri->segment(1) == '' ? 'active' : '' ?>" href="<?= base_url('beli_ban') ?>">Masuk</a>
+        <a class="collapse-item <?= $this->uri->segment(1) == 'movement' || $this->uri->segment(1) == '' ? 'active' : '' ?>" href="<?= base_url('movement') ?>">Movement</a>
         <a class="collapse-item <?= $this->uri->segment(1) == 'pakai_ban' || $this->uri->segment(1) == '' ? 'active' : '' ?>" href="<?= base_url('pakai_ban') ?>">Keluar</a>
         <a class="collapse-item <?= $this->uri->segment(1) == 'oper_ban' || $this->uri->segment(1) == '' ? 'active' : '' ?>" href="<?= base_url('oper_ban') ?>">Operan</a>
         <a class="collapse-item <?= $this->uri->segment(1) == 'retur_ban' || $this->uri->segment(1) == '' ? 'active' : '' ?>" href="<?= base_url('retur_ban') ?>">Retur</a>
