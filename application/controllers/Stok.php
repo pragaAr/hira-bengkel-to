@@ -205,7 +205,7 @@ class Stok extends CI_Controller
     $data['stok']       = $this->Stok->getId($id);
     $data['history']    = $this->Stok->getHistory($id, $config['per_page'], $start);
 
-    $this->load->view('template/header');
+    $this->load->view('template/header', $data);
     $this->load->view('template/sidebar');
     $this->load->view('template/navbar');
     $this->load->view('main/stok/part/history', $data);

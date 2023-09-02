@@ -105,8 +105,32 @@ $('#pakaiBanTables').DataTable({
   },
 });
 
-$(document).on('select2:open', () => {
-  document
-    .querySelector('.select2-container--open .select2-search__field')
-    .focus();
-});
+// $('#pakaiBanTables').on('click', '.btn-delete', function () {
+//   const kd = $(this).data('kd');
+//   Swal.fire({
+//     title: 'Apakah anda yakin ?',
+//     text: 'Data akan di hapus !!',
+//     icon: 'warning',
+//     showCancelButton: true,
+//     confirmButtonColor: '#3085d6',
+//     cancelButtonColor: '#d33',
+//     cancelButtonText: 'Batal',
+//     confirmButtonText: 'Ya, Hapus !',
+//   }).then((result) => {
+//     if (result.value) {
+//       $.ajax({
+//         url: 'http://localhost/he/pakai_ban/delete',
+//         method: 'POST',
+//         data: { kdpakai: kd },
+//         success: function (data) {
+//           Swal.fire({
+//             icon: 'success',
+//             title: 'Success!',
+//             text: 'Data Pemakaian berhasil dihapus!',
+//           });
+//           $('#pakaiBanTables').DataTable().ajax.reload(null, false);
+//         },
+//       });
+//     }
+//   });
+// });

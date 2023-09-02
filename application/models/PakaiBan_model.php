@@ -16,6 +16,10 @@ class PakaiBan_model extends CI_Model
 
   public function getData()
   {
+
+    // <a href="javascript:void(0);" class="btn btn-sm btn-danger text-white btn-delete" data-kd="$2" data-toggle="tooltip" title="Delete">
+    // <i class="fas fa-trash fa-sm"></i>
+    // </a>
     $this->datatables->select('a.id_pakai_ban, a.kd_pakai_ban, a.truck_ban_id, a.nama_montir_ban, a.total_pakai_ban, a.tgl_pakai_ban, b.id_truck, b.plat_no_truck, b.merk_truck, b.jenis_truck')
       ->from('pakai_ban a')
       ->join('truck b', 'b.id_truck = a.truck_ban_id', 'left')
@@ -197,4 +201,11 @@ class PakaiBan_model extends CI_Model
     $this->db->update('detail_pakai_ban', $datapakai, $wherepakai);
     $this->db->insert('history_ban', $datahistori);
   }
+
+  // public function delete($kd)
+  // {
+  //   $this->db->delete('pakai_ban', ['kd_pakai_ban' => $kd]);
+  //   $this->db->delete('detail_pakai_ban', ['kd_pakai_ban' => $kd]);
+  //   $this->db->delete('history_ban', ['kd_history_ban' => $kd]);
+  // }
 }

@@ -194,4 +194,12 @@ class Pakai_ban extends CI_Controller
     $this->session->set_flashdata('kembaligudang', 'Ban telah dikembalikan ke gudang');
     redirect('pakai_ban');
   }
+
+  // public function delete()
+  // {
+  //   $kd   = $this->input->post('kdpakai');
+  //   $data = $this->Pakai->delete($kd);
+
+  //   echo json_encode($data);
+  // }
 }
