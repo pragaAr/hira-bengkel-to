@@ -16,7 +16,7 @@ $('#operBanTables').DataTable({
   ordering: true,
   order: [[0, 'desc']],
   language: {
-    searchPlaceholder: 'Search Kd Oper',
+    searchPlaceholder: 'Search',
   },
   initComplete: function () {
     var api = this.api();
@@ -57,7 +57,7 @@ $('#operBanTables').DataTable({
     },
     {
       data: 'no_seri',
-      searchable: false,
+      searchable: true,
       render: function (data, type, row) {
         return data === null && row.nama_merk === null
           ? '-'
@@ -70,14 +70,14 @@ $('#operBanTables').DataTable({
     },
     {
       data: 'truckasal',
-      searchable: false,
+      searchable: true,
       render: function (data, type, row) {
         return data.toUpperCase() + ', ' + row.merkasal.toUpperCase();
       },
     },
     {
       data: 'trucktujuan',
-      searchable: false,
+      searchable: true,
       render: function (data, type, row) {
         return data.toUpperCase() + ', ' + row.merktujuan.toUpperCase();
       },
@@ -91,7 +91,7 @@ $('#operBanTables').DataTable({
     },
     {
       data: 'montir',
-      searchable: false,
+      searchable: true,
       render: function (data, type, row) {
         return data.toUpperCase();
       },
