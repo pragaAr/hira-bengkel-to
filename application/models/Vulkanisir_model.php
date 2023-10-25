@@ -23,6 +23,12 @@ class Vulkanisir_model extends CI_Model
           <a href="http://localhost/he/vulkanisir/suratJalanKeluar/$2" target="_blank" class="btn btn-info btn-sm btn-print" data-toggle="tooltip" title="Cetak">
             <i class="fas fa-print fa-sm"></i>
           </a>
+          <a href="javascript:void(0);" class="btn btn-sm btn-success text-white btn-detail" data-kd="$2" data-toggle="tooltip" title="Detail">
+            <i class="fas fa-eye fa-sm"></i>
+          </a>
+          <a href="javascript:void(0);" class="btn btn-sm btn-danger text-white btn-delete" data-kd="$2" data-toggle="tooltip" title="Delete">
+            <i class="fas fa-trash fa-sm"></i>
+          </a>
         </div>',
         'id_vulk, kd_vulk, tempat_vulk, jml_total_vulk, tgl_vulk'
       );
@@ -37,14 +43,15 @@ class Vulkanisir_model extends CI_Model
     $this->db->update_batch('ban', $update_ban, 'id_ban');
   }
 
-  public function getDetailByKdVulk($kd)
+  public function getDetailByKd($kd)
   {
-    $this->db->select('*');
-    $this->db->from('vulkanisir');
-    $this->db->join('detail_vulk', 'detail_vulk.kd_vulk = vulkanisir.kd_vulk');
-    $this->db->where('vulkanisir.kd_vulk', $kd);
-    $query = $this->db->get();
-    return $query->result_array();
+    $this->db->select('no_seri_vulk, merk_vulk, ukuran_ban_vulk, status')
+      ->from('detail_vulk')
+      ->where('kd_vulk', $kd);
+
+    $query = $this->db->get()->result();
+
+    return $query;
   }
 
   public function getVulkKd($kd)
@@ -107,6 +114,23 @@ class Vulkanisir_model extends CI_Model
           
         </div>',
         'id_detail_vulk, kd_vulk, no_seri_vulk, merk_vulk, ukuran_ban_vulk, jml_vulk, status, no_nota, tgl_update, nama_toko, tgl_vulk'
+      );
+
+    return $this->datatables->generate();
+  }
+
+  public function getDetailAllVulkDone()
+  {
+    $this->datatables->select('a.id_detail_vulk_selesai, a.kd_vulk, a.no_seri, a.merk, a.ukuran, a.ongkos, b.no_nota, b.tgl_selesai, c.nama_toko')
+      ->from('detail_vulk_selesai a')
+      ->join('vulk_done b', 'b.kd_vulk = a.kd_vulk')
+      ->join('toko c', 'c.id_toko = b.tempat_vulk')
+      ->add_column(
+        'view',
+        '<div class="btn-group" role="group">
+          
+        </div>',
+        'id_detail_vulk_selesai, kd_vulk, no_seri, merk, ukuran, no_nota, tgl_update, nama_toko, tgl_selesai'
       );
 
     return $this->datatables->generate();
