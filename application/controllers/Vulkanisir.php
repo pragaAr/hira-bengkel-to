@@ -156,7 +156,7 @@ class Vulkanisir extends CI_Controller
     $jmlban     = $this->input->post('jml_hidden');
     $kdvulk     = $this->input->post('kdvulk');
     $toko       = $this->input->post('toko');
-    $tokoid     = $this->input->post('tokoid');
+    $tokoid     = $this->input->post('tempat');
     $biaya      = preg_replace("/[^0-9\.]/", "", $this->input->post('biaya'));
     $pay        = $this->input->post('pay');
     $nota       = $this->input->post('nota');
