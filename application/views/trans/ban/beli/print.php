@@ -189,9 +189,11 @@
               <td class="td-data text-right" style="padding-right:10px;">
                 Rp. <?= number_format($all['sub_total_ban']) ?>
               </td>
-              <td class="td-data text-center">
-                <?= ucwords($all['ket_beli_ban']) ?>
-              </td>
+              <?php if ($all['ket_beli_ban'] == '') { ?>
+                <td>-</td>
+              <?php } else { ?>
+                <td class="td-data text-center"><?= ucwords($all['ket_beli_ban']) ?></td>
+              <?php } ?>
             </tr>
           <?php endforeach ?>
           <tr>
@@ -312,6 +314,15 @@
                 </td>
               </tr>
             <?php endforeach ?>
+          <?php } else { ?>
+            <tr>
+              <td colspan="5" class="font-weight-bold text-danger text-right">
+                Total Bayar :
+              </td>
+              <td colspan="3" class="font-weight-bold text-danger text-right pr-5">
+                Rp <?= number_format($beli->total_harga_ban) ?>
+              </td>
+            </tr>
           <?php } ?>
         </tfoot>
 
