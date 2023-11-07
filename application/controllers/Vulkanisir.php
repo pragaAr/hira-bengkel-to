@@ -70,7 +70,7 @@ class Vulkanisir extends CI_Controller
 
     $data_vulk = [
       'kd_vulk'           => $kdvulk,
-      'tempat_vulk'       => $toko,
+      'tempat_vulk'       => $tokoid,
       'jml_total_vulk'    => $total,
       'tgl_vulk'          => $date,
     ];
