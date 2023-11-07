@@ -205,7 +205,7 @@ class Vulkanisir extends CI_Controller
       $historyVulk[$k]['ket_history']       = "Selesai Vulkanisir dari " . $toko;
       $historyVulk[$k]['ket_trans']         = "Vulkanisir Selesai";
       $historyVulk[$k]['tgl_add_history']   = $date;
-      $historyVulk[$k]['user_history']      = $user;
+      $historyVulk[$k]['user_history']      = $this->session->userdata('username');
     }
 
     $updateStatusBan = [];
